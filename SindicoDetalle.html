@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+<title>Síndico Detalle</title>
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<script type="text/javascript" src="{page:pathToRoot}script.js"></script>
+<link rel="stylesheet" type="text/css" href="{page:pathToRoot}style.css" />
+<!--[if IE 6]><link rel="stylesheet" href="{page:pathToRoot}style.ie6.css" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><LINK 
+rel=stylesheet type=text/css href="{page:pathToRoot}style.ie7.css" media=screen><![endif]-->
+<script language="JavaScript" type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+//Begin CCS script
+//Include Common JSFunctions @1-F6D184C6
+
+//--><!]]>
+</script>
+<script language="JavaScript" src="ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+<!--//--><![CDATA[//><!--
+//End Include Common JSFunctions
+
+//bind_events @1-99F07CBB
+function bind_events() {
+    if (functionExists("Header_bind_events")) Header_bind_events();
+    if (functionExists("Footer_bind_events")) Footer_bind_events();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+
+//--><!]]>
+</script>
+</head>
+<body>
+{Header} <br />
+<div class="art-content-layout">
+  <div class="art-layout-cell art-content">
+    
+    
+    <!-- BEGIN Grid Grid3 -->
+	<h1>{Label1}</h1>
+    <h2 class="art-postheader">Alcalde Resultado Acumulado</h2>
+    <br />
+    <table>
+      <tr align="center">
+        <th scope="col"></th>
+ 
+        <th scope="col">Nombre&nbsp;</th>
+ 
+        <th scope="col">Votos</th>
+ 
+        <th scope="col">Porciento</th>
+      </tr>
+ 
+      <!-- BEGIN Row -->
+      <tr style="FONT-SIZE: 16px; FONT-WEIGHT: bold" class="bottomborder">
+        <td><img id="Grid3logo_{Grid3:rowNumber}" alt="{siglas}" src="{logo}" width="50" height="60" />&nbsp;</td> 
+        <td style="TEXT-ALIGN: right; WIDTH: 275px; FONT-SIZE: 12px">
+          <p align="left">{partido}&nbsp;</p>
+        </td> 
+        <td style="TEXT-ALIGN: right; WIDTH: 75px">{votos}&nbsp;</td> 
+        <td style="TEXT-ALIGN: right; WIDTH: 75px">{porciento}&nbsp;</td>
+      </tr>
+ <!-- END Row -->
+      <!-- BEGIN NoRecords -->
+      <tr>
+        <td colspan="4">No records</td>
+      </tr>
+      <!-- END NoRecords -->
+    </table>
+    <!-- END Grid Grid3 -->
+  </div>
+  <div class="art-layout-cell art-sidebar1">
+  	
+<!-- BEGIN Grid Grid1 -->
+<h1>&nbsp;</h1>
+ 
+<h2 class="art-postheader">Alcalde Resultado Final</h2>
+ <br />
+<table>
+  <tr align="center">
+    <th scope="col">Partido</th>
+ 
+    <th scope="col"></th>
+ 
+    <th scope="col">Votos</th>
+ 
+    <th scope="col">Porciento</th>
+ 
+  </tr>
+ 
+  <!-- BEGIN Row -->
+  <tr style="FONT-SIZE: 18px; FONT-WEIGHT: bold" class="bottomborder">
+    <td style="WIDTH: 50px">{siglas}&nbsp;</td> 
+    <td><img id="Grid1logo_{Grid1:rowNumber}" alt="{siglas}" src="{logo}" width="50" height="60" />&nbsp;</td> 
+    <td style="TEXT-ALIGN: right; WIDTH: 125px">{votos}&nbsp;</td> 
+    <td style="TEXT-ALIGN: right; WIDTH: 75px">{porciento}&nbsp;</td> 
+  </tr>
+ <!-- END Row -->
+  <!-- BEGIN NoRecords -->
+  <tr>
+    <td colspan="4">No records</td> 
+  </tr>
+ <!-- END NoRecords -->
+</table>
+ <!-- END Grid Grid1 -->
+ 
+<!-- BEGIN Grid Grid2 -->
+<table style="FONT-SIZE: 18px">
+  <!-- BEGIN Row -->
+  <tr>
+    <th style="WIDTH: 150px" scope="row">Votos</th>
+ 
+    <td>{votos}&nbsp;</td> 
+    <th style="WIDTH: 150px" scope="row">Inscritos</th>
+ 
+    <td>{inscritos}&nbsp;</td> 
+  </tr>
+ 
+  <tr>
+    <th scope="row">Participación</th>
+ 
+    <td>{participacion}&nbsp;</td> 
+    <th scope="row">Total Inscritos</th>
+ 
+    <td>{totalinscritos}&nbsp;</td> 
+  </tr>
+ <!-- END Row -->
+  <!-- BEGIN NoRecords -->
+  <tr>
+    <td colspan="2">No records</td> 
+  </tr>
+ <!-- END NoRecords -->
+</table>
+ <!-- END Grid Grid2 -->
+    
+    
+  </div>
+</div>
+<div class="cleared">
+</div>
+<div class="cleared">
+</div>
+<br />
+<!-- BEGIN Grid Grid5 -->
+<table width="100%">
+  <!-- BEGIN Row -->
+  <tr>
+    <td style="TEXT-ALIGN: center; FONT-SIZE: 18px">{contados} mesas contadas de {colegios}&nbsp;para {porcientoContados}&nbsp;</td>
+  </tr>
+ <!-- END Row -->
+  <!-- BEGIN NoRecords -->
+  <tr>
+    <td>No records</td>
+  </tr>
+  <!-- END NoRecords -->
+</table>
+<!-- END Grid Grid5 --><br />
+{Footer} 
+</body>
+</html>

@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+<title>Main</title>
+ 
+<script type="text/javascript" src="{page:pathToRoot}script.js"></script>
+<link rel="stylesheet" type="text/css" href="{page:pathToRoot}style.css" />
+<!--[if IE 6]><link rel="stylesheet" href="{page:pathToRoot}style.ie6.css" type="text/css" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="{page:pathToRoot}style.ie7.css" type="text/css" media="screen" /><![endif]-->
+<script language="JavaScript" type="text/javascript">
+<!--//--><![CDATA[//><!--
+
+//Begin CCS script
+//Include Common JSFunctions @1-37F35073
+
+//--><!]]>
+</script>
+<script language="JavaScript" src="ClientI18N.php?file=Functions.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" src="ClientI18N.php?file=DatePicker.js&amp;locale={res:CCS_LocaleID}" type="text/javascript" charset="utf-8"></script>
+<script language="JavaScript" type="text/javascript">
+<!--//--><![CDATA[//><!--
+//End Include Common JSFunctions
+
+//Date Picker Object Definitions @1-47981236
+
+var task_DatePicker_task_start_date1 = new Object(); 
+task_DatePicker_task_start_date1.format           = "mm/dd/yy";
+task_DatePicker_task_start_date1.style            = "Styles/Basic/Style.css";
+task_DatePicker_task_start_date1.relativePathPart = "";
+task_DatePicker_task_start_date1.themeVersion = "3.0";
+
+var task_DatePicker_task_finish_date1 = new Object(); 
+task_DatePicker_task_finish_date1.format           = "mm/dd/yy";
+task_DatePicker_task_finish_date1.style            = "Styles/Basic/Style.css";
+task_DatePicker_task_finish_date1.relativePathPart = "";
+task_DatePicker_task_finish_date1.themeVersion = "3.0";
+
+//End Date Picker Object Definitions
+
+//bind_events @1-665C6BEC
+function bind_events() {
+    if (functionExists("Header_bind_events")) Header_bind_events();
+    if (functionExists("Footer_bind_events")) Footer_bind_events();
+    if (functionExists("VerticalMenu_bind_events")) VerticalMenu_bind_events();
+}
+//End bind_events
+
+window.onload = bind_events; //Assign bind_events @1-19F7B649
+
+//End CCS script
+
+//--><!]]>
+</script>
+</head>
+<body>
+{Header}
+<div class="art-content-layout">
+  <div class="art-content-layout-row">
+    <div class="art-layout-cell art-content">
+      <div class="art-post">
+        <div class="art-post-body">
+          <div class="art-post-inner">
+            <h2 class="art-postheader">Advanced Search</h2>
+            <div class="art-postcontent">
+              <!-- article-content -->
+              <!-- BEGIN Record advanced_search -->
+              <form id="advanced_search" name="{HTMLFormName}" action="{Action}" method="post">
+                <table class="Record art-article" cellspacing="0" cellpadding="0">
+                  <!-- BEGIN Error -->
+                  <tr class="Error">
+                    <td colspan="2">{Error}</td>
+                  </tr>
+                  <!-- END Error -->
+                  <tr class="Controls">
+                    <td class="th"><label for="advanced_searchkeywords">Keywords</label></td> 
+                    <td><input type="text" name="{keywords_Name}" value="{keywords}" id="advanced_searchkeywords" style="width: 95%;" /></td> 
+                  </tr>
+ 
+                  <tr class="Controls">
+                    <td class="th"><label for="advanced_searchassign_to">Assigned To</label></td> 
+                    <td>
+                      <select name="assign_to" id="advanced_searchassign_to">
+                        <option value="">All</option>
+                        {assign_to_Options}
+                      </select>
+                    </td> 
+                  </tr>
+ 
+                  <tr class="Controls">
+                    <td class="th"><label for="advanced_searchpriority_id">Priority</label></td> 
+                    <td>
+                      <select name="priority_id" id="advanced_searchpriority_id">
+                        <option value="">All</option>
+                        {priority_id_Options}
+                      </select>
+                    </td> 
+                  </tr>
+ 
+                  <tr class="Controls">
+                    <td class="th"><label for="advanced_searchstatus_id">Status</label></td> 
+                    <td>
+                      <select name="status_id" id="advanced_searchstatus_id">
+                        <option value="">All</option>
+                        {status_id_Options}
+                      </select>
+                    </td> 
+                  </tr>
+ 
+                  <tr class="Bottom">
+                    <td align="right" colspan="2">
+                      <!-- BEGIN Button DoSearch --><input name="{Button_Name}" class="Button" type="submit" value="Search" alt="Search" id="advanced_searchDoSearch" /><!-- END Button DoSearch --></td> 
+                  </tr>
+ 
+                </table>
+              </form>
+              <!-- END Record advanced_search -->
+              <!-- /article-content -->
+            </div>
+            <div class="cleared">
+            </div>
+          </div>
+          <div class="cleared">
+          </div>
+ 
+        </div>
+      </div>
+      <div class="art-post">
+        <div class="art-post-body">
+          <div class="art-post-inner">
+            <h2 class="art-postheader">Grid</h2>
+            <div class="art-postcontent">
+              <!-- article-content -->
+              <!-- BEGIN Grid tasks -->
+              <table class="Grid art-article" cellspacing="0" cellpadding="0" width="95%">
+                <tr class="Caption">
+                  <th>
+                  <!-- BEGIN Sorter sorter_task_name --><a href="{Sort_URL}" id="taskssorter_task_name">Task</a> 
+                  <!-- BEGIN Asc_On --><img alt="Ascending" src="Styles/Basic/Images/Asc.gif" border="0" /><!-- END Asc_On -->
+                  <!-- BEGIN Desc_On --><img alt="Descending" src="Styles/Basic/Images/Desc.gif" border="0" /><!-- END Desc_On --><!-- END Sorter sorter_task_name --></th>
+ 
+                  <th>
+                  <!-- BEGIN Sorter sorter_priority_id --><a href="{Sort_URL}" id="taskssorter_priority_id">Priority</a> 
+                  <!-- BEGIN Asc_On --><img alt="Ascending" src="Styles/Basic/Images/Asc.gif" border="0" /><!-- END Asc_On -->
+                  <!-- BEGIN Desc_On --><img alt="Descending" src="Styles/Basic/Images/Desc.gif" border="0" /><!-- END Desc_On --><!-- END Sorter sorter_priority_id --></th>
+ 
+                  <th>
+                  <!-- BEGIN Sorter sorter_status_id --><a href="{Sort_URL}" id="taskssorter_status_id">Status</a> 
+                  <!-- BEGIN Asc_On --><img alt="Ascending" src="Styles/Basic/Images/Asc.gif" border="0" /><!-- END Asc_On -->
+                  <!-- BEGIN Desc_On --><img alt="Descending" src="Styles/Basic/Images/Desc.gif" border="0" /><!-- END Desc_On --><!-- END Sorter sorter_status_id --></th>
+ 
+                  <th>
+                  <!-- BEGIN Sorter sorter_user_id_assign_to --><a href="{Sort_URL}" id="taskssorter_user_id_assign_to">Assigned To</a> 
+                  <!-- BEGIN Asc_On --><img alt="Ascending" src="Styles/Basic/Images/Asc.gif" border="0" /><!-- END Asc_On -->
+                  <!-- BEGIN Desc_On --><img alt="Descending" src="Styles/Basic/Images/Desc.gif" border="0" /><!-- END Desc_On --><!-- END Sorter sorter_user_id_assign_to --></th>
+ 
+                </tr>
+ 
+                <!-- BEGIN Row -->
+                <tr class="Row">
+                  <td><a href="{task_name_Src}">{task_name}</a></td> 
+                  <td>{priority_id}</td> 
+                  <td>{status_id}</td> 
+                  <td>{user_id_assign_to}</td> 
+                </tr>
+ <!-- END Row -->
+                <!-- BEGIN NoRecords -->
+                <tr class="NoRecords">
+                  <td colspan="4">No records</td> 
+                </tr>
+ <!-- END NoRecords -->
+                <tr class="Footer">
+                  <td nowrap="nowrap"><a href="{Link1_Src}" class="art-button" id="tasksLink1">Add&nbsp;New&nbsp;Task</a> </td> 
+                  <td colspan="3">
+                    <!-- BEGIN Navigator task_items_Navigator -->
+                    <!-- BEGIN Prev_On --><a href="{Prev_URL}">Prev</a><!-- END Prev_On -->
+                    <!-- BEGIN Prev_Off -->Prev<!-- END Prev_Off -->&nbsp;[{Page_Number}] 
+                    <!-- BEGIN Next_On --><a href="{Next_URL}">Next</a><!-- END Next_On -->
+                    <!-- BEGIN Next_Off -->Next<!-- END Next_Off --><!-- END Navigator task_items_Navigator --></td> 
+                </tr>
+              </table>
+              <!-- END Grid tasks -->
+              <!-- /article-content -->
+            </div>
+            <div class="cleared">
+            </div>
+          </div>
+          <div class="cleared">
+          </div>
+ 
+        </div>
+      </div>
+      <div class="art-post">
+        <div class="art-post-body">
+          <div class="art-post-inner">
+            <h2 class="art-postheader">Record</h2>
+            <div class="art-postcontent">
+              <!-- article-content -->
+              <!-- BEGIN Record task -->
+              <form id="task" name="{HTMLFormName}" action="{Action}" method="post">
+                <table class="Record art-article" cellspacing="0" cellpadding="0">
+                  <!-- BEGIN Error -->
+                  <tr class="Error">
+                    <td nowrap="nowrap" colspan="2">{Error}</td>
+                  </tr>
+                  <!-- END Error -->
+                  <tr class="Controls">
+                    <td class="th"><label for="tasktask_name">Task *</label></td> 
+                    <td><input maxlength="100" value="{task_name}" name="task_name" id="tasktask_name" style="width: 90%;" /></td> 
+                  </tr>
+ 
+                  <tr class="Controls">
+                    <td class="th"><label for="tasktask_desc">Description</label></td> 
+                    <td><textarea name="task_desc" rows="9" cols="20" style="width: 90%;" id="tasktask_desc">{task_desc}</textarea></td> 
+                  </tr>
+ 
+                  <tr class="Controls">
+                    <td class="th"><label for="taskproject_id">Project *</label></td> 
+                    <td>
+                      <select name="project_id" id="taskproject_id">
+                        <option value="">Select Value</option>
+                        {project_id_Options}
+                      </select>
+ <input type="hidden" value="{user_assign_by}" name="user_assign_by" /></td> 
+                  </tr>
+ 
+                  <tr class="Controls">
+                    <td class="th"><label for="taskpriority_id">Priority *</label></td> 
+                    <td>
+                      <select name="priority_id" id="taskpriority_id">
+                        <option value="">Select Value</option>
+                        {priority_id_Options}
+                      </select>
+                    </td> 
+                  </tr>
+ 
+                  <tr class="Controls">
+                    <td class="th"><label for="taskstatus_id">Status *</label></td> 
+                    <td>
+                      <select name="status_id" id="taskstatus_id">
+                        <option value="">Select Value</option>
+                        {status_id_Options}
+                      </select>
+                    </td> 
+                  </tr>
+ 
+                  <tr class="Controls">
+                    <td class="th"><label for="tasktype_id">Type *</label></td> 
+                    <td>
+                      <select name="type_id" id="tasktype_id">
+                        <option value="">Select Value</option>
+                        {type_id_Options}
+                      </select>
+                    </td> 
+                  </tr>
+ 
+                  <tr class="Controls">
+                    <td class="th"><label for="taskuser_id_assign_to">Assigned To *</label></td> 
+                    <td>
+                      <select name="user_id_assign_to" id="taskuser_id_assign_to">
+                        <option value="">Select Value</option>
+                        {user_id_assign_to_Options}
+                      </select>
+                    </td> 
+                  </tr>
+ 
+                  <tr class="Controls">
+                    <td class="th"><label for="tasktask_start_date">Start Date</label></td> 
+                    <td><input value="{task_start_date}" name="{task_start_date_Name}" id="tasktask_start_date" />&nbsp; 
+                      <!-- BEGIN DatePicker DatePicker_task_start_date1 --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');"><img src="Styles/Basic/Images/DatePicker.gif" border="0" alt="Show DatePicker" /></a><!-- END DatePicker DatePicker_task_start_date1 -->&nbsp;(mm/dd/yy) </td> 
+                  </tr>
+ 
+                  <tr class="Controls">
+                    <td class="th"><label for="tasktask_finish_date">Finish Date</label></td> 
+                    <td><input value="{task_finish_date}" name="{task_finish_date_Name}" id="tasktask_finish_date" />&nbsp; 
+                      <!-- BEGIN DatePicker DatePicker_task_finish_date1 --><a href="javascript:showDatePicker('{Name}','{FormName}','{DateControl}');"><img src="Styles/Basic/Images/DatePicker.gif" border="0" alt="Show DatePicker" /></a><!-- END DatePicker DatePicker_task_finish_date1 -->&nbsp;(mm/dd/yy) </td> 
+                  </tr>
+ 
+                  <tr class="Bottom">
+                    <td colspan="2">
+                      <!-- BEGIN Button Insert --><input name="{Button_Name}" class="Button" type="submit" value="Insert" alt="Insert" id="taskInsert" /><!-- END Button Insert -->
+                      <!-- BEGIN Button Update --><input name="{Button_Name}" class="Button" type="submit" value="Update" alt="Update" id="taskUpdate" /><!-- END Button Update -->
+                      <!-- BEGIN Button Delete --><input name="{Button_Name}" class="Button" type="submit" value="Delete" alt="Delete" id="taskDelete" /><!-- END Button Delete -->
+                      <!-- BEGIN Button Cancel --><input name="{Button_Name}" class="Button" type="submit" value="Cancel" alt="Cancel" id="taskCancel" /><!-- END Button Cancel --></td> 
+                  </tr>
+ 
+                </table>
+              </form>
+              <!-- END Record task -->
+              <!-- /article-content -->
+            </div>
+            <div class="cleared">
+            </div>
+          </div>
+          <div class="cleared">
+          </div>
+ 
+        </div>
+      </div>
+    </div>
+    <div class="art-layout-cell art-sidebar1">
+      {VerticalMenu}
+      <div class="art-block">
+        <div class="art-block-body">
+          <div class="art-blockheader">
+            <div class="l">
+            </div>
+ 
+            <div class="r">
+            </div>
+ 
+            <div class="t">
+              Search
+            </div>
+          </div>
+          <div class="art-blockcontent">
+            <div class="art-blockcontent-body">
+              <div class="art-blockcontent art-article">
+                <!-- BEGIN Record search -->
+                <form id="search" name="{HTMLFormName}" action="{Action}" method="post">
+                  <table class="Record table" cellspacing="0" cellpadding="0" width="95%">
+                    <!-- BEGIN Error -->
+                    <tr class="Error">
+                      <td>{Error}</td>
+                    </tr>
+                    <!-- END Error -->
+                    <tr class="Controls">
+                      <td><label for="searchkeywords" style="display:none;">Keywords</label><input type="text" name="{keywords_Name}" value="{keywords}" id="searchkeywords" style="width: 92%;" /></td> 
+                    </tr>
+ 
+                    <tr class="Bottom">
+                      <td align="right">
+                        <!-- BEGIN Button DoSearch --><span class="art-button-wrapper"><span class="l"></span><span class="r"></span><input class="art-button" name="{Button_Name}" type="submit" value="Search" alt="DoSearch" id="searchDoSearch" /></span><!-- END Button DoSearch --></td> 
+                    </tr>
+ 
+                  </table>
+                </form>
+                <!-- END Record search -->
+              </div>
+              <div class="cleared">
+              </div>
+ 
+            </div>
+          </div>
+          <div class="cleared">
+          </div>
+ 
+        </div>
+      </div>
+    </div>
+ 
+  </div>
+</div>
+<div class="cleared">
+</div>
+<div class="cleared">
+</div>
+{Footer}
+</body>
+</html>

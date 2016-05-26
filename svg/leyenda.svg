@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 12.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 51448)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+]>
+<svg  version="1.1" id="Layer_1" onmousedown="popResults(evt)" onmouseover="showName(evt)" onload="loadResults()"
+	 xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" width="1000" height="720" viewBox="0 -20 1000 720"
+	 overflow="visible" enable-background="new 0 -20 1000 720" xml:space="preserve">
+<g>
+	<text transform="matrix(1 0 0 1 1315.333 137.0264)" font-family="'Myriad-Roman'" font-size="36">PLD</text>
+	<rect x="1283.777" y="114.25" fill="#B8027E" width="19.445" height="19.444"/>
+</g>
+<script  type="text/ecmascript">
+	<![CDATA[
+
+
+function loadResults() {
+
+	getURL("../svg/provincias.php",processResults);
+
+	setTimeout("loadResults();",30000);
+
+}
+
+function showName(evt) {
+
+	NewItem = svgDocument.createTextNode(evt.getTarget().getAttribute("name"))
+	svgDocument.getElementById("name").replaceChild(NewItem, svgDocument.getElementById("name").getFirstChild())	
+
+}
+
+function processResults(data) {
+
+	if (data.success) {
+		
+		node = parseXML(data.content,document);
+		node = node.getFirstChild();
+		nodeList=node.getChildNodes();
+
+
+		for (i=0; i <= node.getChildNodes().getLength() - 1; i++) {
+
+			if (svgDocument.getElementById(nodeList.item(i).getAttribute("id")))
+				svgDocument.getElementById(nodeList.item(i).getAttribute("id")).setAttribute("fill",nodeList.item(i).getAttribute("winner"));
+
+		}
+
+
+
+
+
+	}
+	else {
+		alert('problemas con recibo de resultado');
+	}
+}
+
+
+
+
+		]]>
+</script>
+<g>
+	<text transform="matrix(1 0 0 1 1315.333 177.5264)" font-family="'Myriad-Roman'" font-size="36">PRD</text>
+	<rect x="1283.777" y="154.75" fill="#B8027E" width="19.445" height="19.444"/>
+</g>
+<g>
+	<text transform="matrix(1 0 0 1 1315.333 218.0264)" font-family="'Myriad-Roman'" font-size="36">PRSC</text>
+	<rect x="1283.777" y="195.25" fill="#B8027E" width="19.445" height="19.444"/>
+</g>
+</svg>
